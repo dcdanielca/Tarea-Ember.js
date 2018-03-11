@@ -1,0 +1,22 @@
+<table>
+<tr>
+  <td><strong>Name</strong></td>
+  <td><strong>Sex</strong></td>
+  <td><strong>Salary</strong></td>
+</tr>
+{{#each model.people as |person|}}
+    <tr>
+        <td class = {{if person.isFemale "female" "male"}}>
+            {{person.name}}
+        </td>
+        <td>{{if person.isFemale 'Female' 'Male'}}</td>
+        <td>${{person.salary}}</td>
+    </tr>
+{{/each}} 
+</table>
+
+<div>
+    <p><strong>La ganancia total es: 
+    </strong></p>
+</div>
+{{outlet}}
