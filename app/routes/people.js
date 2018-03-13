@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 
 export default Route.extend({
     model() {
-        return {
+        var peopleList = {
             people: [
                 {
                     id: 'christian',
@@ -35,7 +35,14 @@ export default Route.extend({
                     isFemale: true,
                     salary: 15000000,
                 }
-            ], 
+            ],
         };
+
+        var totalSalary = 0;
+        for(var i = 0; i < peopleList.people.length; i++) {
+          totalSalary += peopleList.people[i].salary;
+        }
+
+        return {people: peopleList.people, total: totalSalary};
     }
 });

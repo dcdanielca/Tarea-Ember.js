@@ -12,11 +12,11 @@
         <td>{{if person.isFemale 'Female' 'Male'}}</td>
         <td>${{person.salary}}</td>
     </tr>
-{{/each}} 
+{{/each}}
 </table>
 
 <div>
-    <p><strong>La ganancia total es: 
+    <p><strong>La ganancia total es: {{model.total}}
     </strong></p>
 </div>
 {{outlet}}
